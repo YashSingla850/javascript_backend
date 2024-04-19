@@ -15,11 +15,12 @@ const uploadOnCLoudinary = async (localFilePath) => {
 
             resource_type: "auto"
         })
-        console.log("file uploaded on cloudinary", response.url);
+        console.log("file uploaded on cloudinary", response);
+        // fs.unlinkSync(localFilePath)
         return response;
     } catch (err) {
         fs.unlinkSync(localFilePath) // remove the localsave file as upload fail
 
     }
 }
-export {uploadOnCLoudinary}
+export { uploadOnCLoudinary }
